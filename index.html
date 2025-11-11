@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Addie's Homepage</title>
   <style>
+    /* === Global Styles === */
     body {
       background-image: url('sunset.jpg');
       background-size: cover;
@@ -13,10 +14,15 @@
       font-family: Arial, sans-serif;
       color: white;
       text-align: center;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     h1 {
-      margin-top: 100px;
+      margin-top: 80px;
       font-size: 3em;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
     }
@@ -29,69 +35,72 @@
       padding: 15px;
       border-radius: 10px;
     }
-  </style>
-</head>
-<body>
-  <h1>Welcome to Addie's Homepage</h1>
-  <p>Hi! I’m Addie, and this is my personal homepage. Here you’ll find my resume, interests, and more!</p>
-</body>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clickable Grid Boxes</title>
-  <style>
-    body {
-	justify-content: center; 
-      align-items: center; 
-
+    /* === Grid of Boxes === */
     .grid {
       display: grid;
-      grid-template-columns: repeat(4, 100px);
-      grid-gap: 15px;
+      grid-template-columns: repeat(3, 120px);
+      grid-gap: 20px;
+      justify-content: center;
+      margin-top: 50px;
     }
 
     .box {
-      width: 100px;
-      height: 100px;
+      position: relative;
+      width: 120px;
+      height: 120px;
       background-color: #6C3BAA;
-      border-radius: 8px;
+      border-radius: 10px;
       transition: background-color 0.3s, transform 0.2s;
       cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .box:hover {
-      background-color: #C9AODC;
+      background-color: #C9A0DC;
       transform: scale(1.1);
     }
 
     .box:active {
       transform: scale(0.95);
     }
+
+    .box span {
+      font-weight: bold;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
+  <h1>Welcome to Addie's Homepage</h1>
+  <p>Hi! I’m Addie, and this is my personal homepage. Here you’ll find my resume, interests, and more!</p>
+
   <div class="grid" id="grid"></div>
 
   <script>
     const grid = document.getElementById("grid");
 
-    for (let i = 1; i <= 3; i++) {
+    const labels = ["Resume", "Interests", "Projects"];
+
+    for (let i = 0; i < labels.length; i++) {
       const box = document.createElement("div");
       box.classList.add("box");
-      box.dataset.index = i;
+
+      const text = document.createElement("span");
+      text.textContent = labels[i];
+      box.appendChild(text);
 
       box.addEventListener("click", () => {
-        alert(`Box ${i} clicked!`);
+        alert(`You clicked ${labels[i]}!`);
+        // You can change this to window.location.href = "yourlink.html";
       });
 
       grid.appendChild(box);
     }
   </script>
 </body>
-</html>
-
-	
 </html>
