@@ -35,19 +35,69 @@
   <h1>Welcome to Addie's Homepage</h1>
   <p>Hi! I’m Addie, and this is my personal homepage. Here you’ll find my resume, interests, and more!</p>
 </body>
-`<a href="workbench-types/roubo.html">`
 
-	`<div class="grid-item roubo">`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clickable Grid Boxes</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #111;
+      margin: 0;
+    }
 
-		`<h1 class="grid-text-top">Roubo</h1>`
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+      grid-gap: 15px;
+    }
 
-		`<p class="grid-text-bottom">Stout, double-vised workbench, can be split or continuous top</p>`
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #3498db;
+      border-radius: 8px;
+      transition: background-color 0.3s, transform 0.2s;
+      cursor: pointer;
+    }
 
-		`<div class="ribbon-wrapper">`
-<div class="ribbon">Advanced</div>
-        `</div>`
+    .box:hover {
+      background-color: #2ecc71;
+      transform: scale(1.1);
+    }
 
-    `</div>`
-  </a>
-</div>
+    .box:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+  <div class="grid" id="grid"></div>
+
+  <script>
+    const grid = document.getElementById("grid");
+
+    // Create 16 boxes dynamically
+    for (let i = 1; i <= 16; i++) {
+      const box = document.createElement("div");
+      box.classList.add("box");
+      box.dataset.index = i;
+
+      box.addEventListener("click", () => {
+        alert(`Box ${i} clicked!`);
+      });
+
+      grid.appendChild(box);
+    }
+  </script>
+</body>
+</html>
+
+	
 </html>
