@@ -5,7 +5,7 @@
   <title>My Image Example</title>
   <style>
     body {
-      background-image: url('resume.jpg');
+      background-image: url('resume.pdf');
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
