@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Addie's Homepage</title>
   <style>
-    /* === Global Styles === */
+    
     body {
       background-image: url('sunset.jpg');
       background-size: cover;
@@ -36,7 +36,7 @@
       border-radius: 10px;
     }
 
-    /* === Grid of Boxes === */
+   
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 120px);
@@ -85,14 +85,13 @@
   <script>
     const grid = document.getElementById("grid");
 
-    // Each box’s label and destination page
+  
     const pages = [
       { label: "Resume", link: "resume.html" },
       { label: "Interests", link: "interests.html" },
       { label: "Projects", link: "projects.html" }
     ];
 
-    // Create the boxes
     for (let i = 0; i < pages.length; i++) {
       const box = document.createElement("div");
       box.classList.add("box");
@@ -101,11 +100,10 @@
       text.textContent = pages[i].label;
       box.appendChild(text);
 
-      // Redirect when clicked
+
       box.addEventListener("click", () => {
-        window.location.href = "resume.html";
-        window.location.href = "interests.html";
-        window.location.href = "projects.html";
+         window.location.href = pages[i].link;
+       
       });
 
       grid.appendChild(box);
