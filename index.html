@@ -56,6 +56,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      text-decoration: none;
     }
 
     .box:hover {
@@ -84,19 +85,27 @@
   <script>
     const grid = document.getElementById("grid");
 
-    const labels = ["Resume", "Interests", "Projects"];
+    // Each box’s label and destination page
+    const pages = [
+      { label: "Resume", link: "resume.html" },
+      { label: "Interests", link: "interests.html" },
+      { label: "Projects", link: "projects.html" }
+    ];
 
-    for (let i = 0; i < labels.length; i++) {
+    // Create the boxes
+    for (let i = 0; i < pages.length; i++) {
       const box = document.createElement("div");
       box.classList.add("box");
 
       const text = document.createElement("span");
-      text.textContent = labels[i];
+      text.textContent = pages[i].label;
       box.appendChild(text);
 
+      // Redirect when clicked
       box.addEventListener("click", () => {
-        alert(`You clicked ${labels[i]}!`);
-        // You can change this to window.location.href = "yourlink.html";
+        window.location.href = "resume.html";
+        window.location.href = "interests.html";
+        window.location.href = "projects.html";
       });
 
       grid.appendChild(box);
