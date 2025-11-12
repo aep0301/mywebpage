@@ -3,8 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <title>My Image Example</title>
+  <style>
+    body {
+      background-image: url('Addie Payne.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+   
+    .corner-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #6C3BAA;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .corner-button:hover {
+      background-color: #C9A0DC;
+      transform: scale(1.05);
+    }
+
+    .corner-button:active {
+      transform: scale(0.95);
+    }
+  </style>
 </head>
 <body>
-  <img src="Addie Payne.jpg" alt="Resume" width="500">
-  </body>
+ 
+  <button class="corner-button" onclick="window.location.href='homepage.html'">
+    Go to Homepage →
+  </button>
+</body>
 </html>
