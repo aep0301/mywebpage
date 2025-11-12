@@ -5,16 +5,32 @@
   <title>My Resume</title>
   <style>
     body {
-      background-image: url('resume.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: center;
       margin: 0;
-      height: 100vh;
       font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      overflow: auto; 
     }
- </style>
+
+    .resume-container {
+      width: max-content; 
+      height: auto;
+      margin: 20px;
+    }
+
+    .resume-container img {
+      display: block;
+      max-height: 90vh; 
+      width: auto;       
+    }
+  </style>
 </head>
+<body>
+  <div class="resume-container">
+    <img src="resume.png" alt="My Resume">
+  </div>
+</body>
 </html>
-  
