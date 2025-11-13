@@ -2,14 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Addie's Intersts</title>
+  <title>Addie's Interests</title>
   <style>
-    
     body {
       background-image: url('sunset.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: 100% 100%;
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
     }
-    </style>
+
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 3em;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 50px;
+    }
+
+    .interest {
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+
+    .interest:hover {
+      transform: scale(1.05);
+    }
+
+    .interest img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .interest h2 {
+      margin-top: 15px;
+      font-size: 1.5em;
+    }
+
+    .interest p {
+      font-size: 1em;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <h1>Addie's Interests</h1>
+
+  <div class="interests">
+    <div class="interest">
+      <img src="SCM.jpg" alt="Walks">
+      <h2>Going for walks to watch the sunset</h2>
+      <p>I enjoy going for walks with my friends to watch the sunsets in Santa Cruz.</p>
+    </div>
+
+   
+  </div>
+</body>
+</html>
