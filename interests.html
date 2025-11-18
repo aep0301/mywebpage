@@ -9,7 +9,6 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      background-size: 100% 100%;
       font-family: Arial, sans-serif;
       color: white;
       margin: 0;
@@ -25,8 +24,8 @@
 
     .interests {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;     /* stack items vertically */
+      align-items: center;        /* center horizontally */
       gap: 40px;
       padding: 50px;
     }
@@ -47,9 +46,12 @@
 
     .interest img {
       width: 100%;
+      max-width: 400px;
       height: 200px;
       object-fit: cover;
       border-radius: 10px;
+      display: block;
+      margin: 0 auto;
     }
 
     .interest h2 {
@@ -64,32 +66,13 @@
     }
   </style>
 </head>
-<html>
-<head>
-  <style>
-    .interests {
-      display: block;
-    }
-
-    .interest {
-      margin-bottom: 20px;
-    }
-
-    .interest img {
-      display: block;
-      width: 100%;
-      max-width: 400px;
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
 
 <body>
   <h1>Addie's Interests</h1>
 
   <div class="interests">
     <div class="interest">
-      <img src="sunset.HEIC" alt="Walks">
+      <img src="sunset.jpg" alt="Walks"> <!-- convert HEIC to JPG or PNG -->
       <h2>Going for walks to watch the sunset</h2>
       <p>I enjoy going for walks with my friends to watch the sunsets in Santa Cruz.</p>
     </div>
@@ -101,6 +84,4 @@
     </div>
   </div>
 </body>
-</html>
-
 </html>
